@@ -1,0 +1,9 @@
+@import 'src/style/mixin';
+@import 'src/style/spacing';
+
+.footer {
+  @include flex-center;
+  flex-shrink: 0;
+  padding-bottom: $spacing-24;
+  font-size: 1.2rem;
+}

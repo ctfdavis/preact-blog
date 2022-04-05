@@ -1,0 +1,26 @@
+@import 'reset';
+@import 'variable';
+@import 'mixin';
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include ubuntu;
+  font-size: 1.6em;
+  background: var(--fd-22);
+  color: var(--22-fd);
+}
+
+a {
+  color: var(--22-fd);
+  &:hover {
+    color: var(--66-ca);
+  }
+}

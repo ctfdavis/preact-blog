@@ -1,0 +1,28 @@
+@import 'src/style/spacing';
+
+.blogContainer {
+  max-width: 70ch;
+  margin: 0 auto $spacing-32;
+}
+
+.blogTitle {
+  margin-bottom: $spacing-24;
+  font-size: 3.6rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.blogBody {
+  h1, h2, h3, h4 {
+    margin-bottom: $spacing-18;
+  }
+  p, pre {
+    margin-bottom: $spacing-12;
+  }
+  pre {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+  }
+}

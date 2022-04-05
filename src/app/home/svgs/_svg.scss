@@ -1,0 +1,25 @@
+.svg {
+  path {
+    fill: var(--66-9c);
+  }
+}
+
+@keyframes movingY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem) scale(1.03);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.island {
+  animation: movingY 2.5s infinite ease-in-out;
+
+  path {
+    fill: var(--ff-fd);
+  }
+}

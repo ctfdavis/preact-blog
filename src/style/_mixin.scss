@@ -1,0 +1,23 @@
+@mixin hurricane {
+  font-family: 'Hurricane', cursive;
+}
+
+@mixin ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+@mixin flex-center($dir: null) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $dir != null {
+    flex-direction: $dir;
+  }
+}
+
+@mixin pageWidthConstraint($w: 100%) {
+  width: $w;
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}

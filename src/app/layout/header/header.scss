@@ -1,0 +1,53 @@
+@import 'src/style/mixin';
+@import 'src/style/spacing';
+
+.header {
+  @include flex-center(column);
+  flex-shrink: 0;
+  margin-bottom: $spacing-48;
+  h1 {
+    @include hurricane;
+    margin: $spacing-12 0;
+    font-size: 4.8rem;
+    user-select: none;
+  }
+  nav {
+    @include flex-center;
+    & > *:not(:last-child) {
+      margin-right: $spacing-32;
+    }
+    & > * {
+      @include flex-center(column);
+    }
+    * {
+      color: var(--22-fd);
+      cursor: pointer;
+    }
+    a {
+      text-decoration: none;
+    }
+    span {
+      font-size: 1.2rem;
+      user-select: none;
+    }
+  }
+}
+
+
+.imgWrapper {
+  @include flex-center(column);
+  width: 5rem;
+  height: 5rem;
+  padding: $spacing-5;
+  border: 2px solid var(--44-e2);
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    margin-bottom: $spacing-64;
+    h1 {
+      margin: $spacing-28 0;
+    }
+  }
+}

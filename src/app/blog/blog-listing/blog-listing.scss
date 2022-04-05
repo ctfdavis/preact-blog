@@ -1,0 +1,164 @@
+@import 'src/style/spacing';
+@import 'src/style/mixin';
+
+.blogListing {
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.searchBar {
+  position:relative;
+  label {
+    position:absolute;
+    top: 1.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--z-n-1);
+  }
+  input {
+    width: 100%;
+    height: 5rem;
+    margin-bottom: $spacing-18;
+    padding-left: $spacing-48;
+    padding-right: $spacing-32;
+    border-top: 3px solid var(--66-ca);
+    border-bottom: 3px solid var(--66-ca);
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: none;
+    color: var(--44-e2);
+    &:focus ~ label,
+    &:valid ~ label {
+      display: none;
+    }
+  }
+  div {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.article {
+  @include flex-center(column);
+  padding: $spacing-32 $spacing-12;
+  &:last-of-type {
+    margin-bottom: $spacing-24;
+  }
+  &:first-of-type {
+    border-top: 3px solid var(--66-ca);
+  }
+  border-bottom: 3px solid var(--66-ca);
+  color: var(--22-fd);
+  h2 {
+    align-self: flex-start;
+    margin-bottom: $spacing-24;
+    font-size: 2.4rem;
+    font-weight: 300;
+  }
+  p, a {
+    margin-bottom: $spacing-24;
+    font-size: 1.6rem;
+    font-weight: 300;
+    align-self: flex-start;
+  }
+}
+
+.metadata {
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-12;
+  font-size: 1.4rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: $spacing-5;
+  margin-bottom: $spacing-5;
+  border: 2px solid var(--44-e2);
+  border-radius: 3px;
+  font-weight: 700;
+  color: var(--44-e2);
+  &:not(:last-child) {
+    margin-right: $spacing-12;
+  }
+}
+
+@media screen and (min-width: 415px) {
+  .searchBar input, article {
+    border-radius: 5px;
+  }
+  .searchBar {
+    input {
+      border-left: 3px solid var(--66-ca);
+      border-right: 3px solid var(--66-ca);
+    }
+  }
+  .article {
+    margin-bottom: $spacing-24;
+    border-top: 3px solid var(--66-ca);
+    border-left: 3px solid var(--66-ca);
+    border-right: 3px solid var(--66-ca);
+  }
+}
+
+.paginator {
+  @include flex-center;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-32;
+  & > * {
+    margin-right: $spacing-12;
+    margin-bottom: $spacing-12;
+  }
+}
+
+.pageBox {
+  @include flex-center();
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: $spacing-5;
+  border: 2px solid var(--22-fd);
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.pageBox__active {
+  color: #222222;
+  background: #e2e2e0;
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  .article {
+    h2 {
+      align-self: unset;
+      font-size: 2.6rem;
+    }
+    p {
+      width: 44rem;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.6rem;
+    }
+    a {
+      font-size: 1.4rem;
+      margin-left: $spacing-36;
+      align-self: start;
+    }
+  }
+  .metadata {
+    width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.6rem;
+  }
+}
