@@ -3,6 +3,7 @@ title: Writing my Blog in Preact
 date: 2022-04-05
 update: 2022-04-05
 tags: 'Blog, Preact, Sharing'
+description: The lessons I have learned from rewriting my blog in Preact.
 ---
 I rewrote my blog in Preact. Here's what I have learned.
 

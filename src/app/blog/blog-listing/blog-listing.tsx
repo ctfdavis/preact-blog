@@ -4,6 +4,10 @@ import {Link} from 'preact-router';
 import style from './blog-listing.scss';
 import SearchSvg from './svgs/search-svg';
 import {useEffect, useState} from 'preact/compat';
+import {
+	metaHelper,
+	titleHelper
+} from '../../../utils/seo-helper';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const {usePrerenderData} = require('@preact/prerender-data-provider');
 
@@ -114,6 +118,11 @@ const BlogListing: FunctionalComponent = (props: any) => {
 			handleSearch();
 		}
 	}
+
+	useEffect(() => {
+		titleHelper('Blog - davischan.dev');
+		metaHelper('description', 'A blog on software engineering by Davis Chan');
+	}, [])
 
 	useEffect(() => {
 		let blogData = data?.data?.edges || [];

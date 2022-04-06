@@ -4,6 +4,10 @@ import SpeechBubble from './svgs/speech-bubble';
 import Person from './svgs/person';
 import Island from './svgs/island';
 import {useEffect, useState} from 'preact/compat';
+import {
+	metaHelper,
+	titleHelper
+} from '../../utils/seo-helper';
 
 const Home: FunctionalComponent = () => {
 	const fullMonologMsg = 'I\'m Davis. Welcome to my site.';
@@ -13,6 +17,11 @@ const Home: FunctionalComponent = () => {
 	const scrollDown = () => {
 		window.scrollTo({top: 800, behavior: 'smooth'});
 	}
+
+	useEffect(() => {
+		titleHelper('Home - davischan.dev');
+		metaHelper('description', 'A blog on software engineering by Davis Chan');
+	}, [])
 
 	useEffect(() => {
 		const typingAnimation = setInterval(() => {

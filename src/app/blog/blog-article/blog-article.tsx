@@ -3,6 +3,11 @@ import {FunctionalComponent, h} from 'preact';
 const {usePrerenderData} = require('@preact/prerender-data-provider');
 import Markdown from 'markdown-to-jsx';
 import style from './blog-article.scss';
+import {useEffect} from 'preact/compat';
+import {
+	metaHelper,
+	titleHelper
+} from '../../../utils/seo-helper';
 
 const getBlogBody = (data: any, isLoading: boolean) => {
 	if (isLoading) {
@@ -40,6 +45,10 @@ const getBlogBody = (data: any, isLoading: boolean) => {
 
 const BlogArticle: FunctionalComponent = (props: any) => {
 	const [data, isLoading] = usePrerenderData(props);
+	useEffect(() => {
+		titleHelper(`${data?.data?.details?.title || 'Blog'} - davischan.dev`);
+		metaHelper('description', data?.data?.details?.description || '');
+	}, [])
 	return (
 		<article className={style.blogContainer}>
 			{getBlogBody(data, isLoading)}
