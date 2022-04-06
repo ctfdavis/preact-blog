@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import {FunctionalComponent, h} from 'preact';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const {usePrerenderData} = require('@preact/prerender-data-provider');
 import Markdown from 'markdown-to-jsx';
 import style from './blog-article.scss';
